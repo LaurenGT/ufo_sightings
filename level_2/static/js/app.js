@@ -3,7 +3,7 @@ var tableData = data;
 
 // select the filter table button
 let filterTable = d3.select("#filter-btn");
-let form = d3.select("form");
+let form = d3.select(".form-control");
 
 // reference to the table body
 const tbody = d3.select("tbody");
@@ -30,6 +30,9 @@ const runEnter = () => {
     d3.event.preventDefault();
     let inputDate = d3.select("#datetime").property("value");
     let inputCity = d3.select("#city").property("value");
+    let inputState = d3.select("#state").property("value");
+    let inputCountry = d3.select("#country").property("value");
+    let inputShape = d3.select("#shape").property("value");
     // let inputValue = inputElement.property("value");
 
     /*TODO:
@@ -39,7 +42,12 @@ const runEnter = () => {
     */
 
     // console.log(inputValue);
-    let filterCriteria = {"date": inputDate, "city": inputCity};
+    let filterCriteria = {
+        "date": inputDate, 
+        "city": inputCity, 
+        "state": inputState, 
+        "county": inputCountry,
+        "shape": inputShape};
     
     let filteredData = tableData.filter(runMultiple, filterCriteria);
     
