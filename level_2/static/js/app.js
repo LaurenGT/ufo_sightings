@@ -21,7 +21,7 @@ data.forEach(ufoSighting => {
 function runMultiple(sighting) {
     // console.log(sighting);
     console.log(this.date);
-    return sighting.datetime === this.date && sighting.city === this.city;
+    return sighting.datetime === this.date && sighting.city === this.city && sighting.state === this.state && sighting.country === this.country && sighting.shape === this.shape;
     
 }
 
@@ -36,20 +36,22 @@ const runEnter = () => {
     // let inputValue = inputElement.property("value");
 
     /*TODO:
-    find all the form input - replicate inputDate
-    build filter criteria - add keys only with data to filterCriteria
+    done - find all the form input - replicate inputDate
+    done - build filter criteria - add keys only with data to filterCriteria
     in runMult - iterate over the filterCriteria and filter on the keys that match
     */
 
     // console.log(inputValue);
-    let filterCriteria = {
+
+    let filterInputs = {
         "date": inputDate, 
         "city": inputCity, 
         "state": inputState, 
-        "county": inputCountry,
+        "country": inputCountry,
         "shape": inputShape};
-    
-    let filteredData = tableData.filter(runMultiple, filterCriteria);
+    console.log(filterInputs)
+
+    let filteredData = tableData.filter(runMultiple, filterInputs);
     
     
 
