@@ -10,7 +10,7 @@ const tbody = d3.select("tbody");
 
 // console.log(data);
 
-data.forEach(ufoSighting => {
+tableData.forEach(ufoSighting => {
     let row = tbody.append("tr");
     Object.values(ufoSighting).forEach(value => {
         let cell = row.append("td");
@@ -21,6 +21,7 @@ data.forEach(ufoSighting => {
 function runMultiple(sighting) {
     // console.log(sighting);
     console.log(this.date);
+
     return sighting.datetime === this.date && sighting.city === this.city && sighting.state === this.state && sighting.country === this.country && sighting.shape === this.shape;
     
 }
@@ -35,24 +36,41 @@ const runEnter = () => {
     let inputShape = d3.select("#shape").property("value");
     // let inputValue = inputElement.property("value");
 
-    /*TODO:
-    done - find all the form input - replicate inputDate
-    done - build filter criteria - add keys only with data to filterCriteria
-    in runMult - iterate over the filterCriteria and filter on the keys that match
-    */
+//     /*TODO:
+//     done - find all the form input - replicate inputDate
+//     done - build filter criteria - add keys only with data to filterCriteria
+//     in runMult - iterate over the filterCriteria and filter on the keys that match
+//     */
 
-    // console.log(inputValue);
+    // if (inputDate) {
+    //     tableData = tableData.filter(sighting => sighting.datetime = inputDate)
+    // }
+    // if (inputCity) {
+    //     tableData = tableData.filter(sighting => sighting.city = inputCity)
+    // }
+    // if (inputState) {
+    //     tableData = tableData.filter(sighting => sighting.state = inputState)
+    // }
+    // if (inputCountry) {
+    //     tableData = tableData.filter(sighting => sighting.country = inputCountry)
+    // }
+    // if (inputShape) {
+    //     tableData = tableData.filter(sighting => sighting.shape = inputShape)
+    // }
 
-    let filterInputs = {
+
+//     // console.log(inputValue);
+
+    let filterCriteria = {
         "date": inputDate, 
         "city": inputCity, 
         "state": inputState, 
         "country": inputCountry,
         "shape": inputShape};
-    console.log(filterInputs)
+    // console.log(filterCriteria)
 
-    let filteredData = tableData.filter(runMultiple, filterInputs);
-    
+    let filteredData = tableData.filter(runMultiple, filterCriteria);
+
     
 
     // let filteredData = tableData.filter(sighting => sighting.datetime === inputValue);
@@ -72,4 +90,6 @@ const runEnter = () => {
 
 // apply event listener to the button for click and submit to run function above
 filterTable.on("click", runEnter);
-form.on("submit", runEnter);
+// form.on("submit", runEnter);
+
+// filterTable.on("click", runMultiple);
