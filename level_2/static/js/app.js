@@ -18,13 +18,13 @@ tableData.forEach(ufoSighting => {
     });
 });
 
-function runMultiple(sighting) {
-    // console.log(sighting);
-    console.log(this.date);
+// function runMultiple(sighting) {
+//     // console.log(sighting);
+//     console.log(this.date);
 
-    return sighting.datetime === this.date && sighting.city === this.city && sighting.state === this.state && sighting.country === this.country && sighting.shape === this.shape;
+//     return sighting.datetime === this.date && sighting.city === this.city && sighting.state === this.state && sighting.country === this.country && sighting.shape === this.shape;
     
-}
+// }
 
 // set up function to reference in event listener
 const runEnter = () => {
@@ -41,35 +41,36 @@ const runEnter = () => {
 //     done - build filter criteria - add keys only with data to filterCriteria
 //     in runMult - iterate over the filterCriteria and filter on the keys that match
 //     */
+    let filteredData = tableData;
+    console.log(inputDate)
+    if (inputDate) {
+        filteredData = filteredData.filter(sighting => sighting.datetime === inputDate)
+    }
+    if (inputCity) {
+        filteredData = filteredData.filter(sighting => sighting.city === inputCity)
+    }
+    if (inputState) {
+        filteredData = filteredData.filter(sighting => sighting.state === inputState)
+    }
+    if (inputCountry) {
+        filteredData = filteredData.filter(sighting => sighting.country === inputCountry)
+    }
+    if (inputShape) {
+        filteredData = filteredData.filter(sighting => sighting.shape === inputShape)
+    }
 
-    // if (inputDate) {
-    //     tableData = tableData.filter(sighting => sighting.datetime = inputDate)
-    // }
-    // if (inputCity) {
-    //     tableData = tableData.filter(sighting => sighting.city = inputCity)
-    // }
-    // if (inputState) {
-    //     tableData = tableData.filter(sighting => sighting.state = inputState)
-    // }
-    // if (inputCountry) {
-    //     tableData = tableData.filter(sighting => sighting.country = inputCountry)
-    // }
-    // if (inputShape) {
-    //     tableData = tableData.filter(sighting => sighting.shape = inputShape)
-    // }
-
-
+    console.log(filteredData)
 //     // console.log(inputValue);
 
-    let filterCriteria = {
-        "date": inputDate, 
-        "city": inputCity, 
-        "state": inputState, 
-        "country": inputCountry,
-        "shape": inputShape};
+    // let filterCriteria = {
+    //     "date": inputDate, 
+    //     "city": inputCity, 
+    //     "state": inputState, 
+    //     "country": inputCountry,
+    //     "shape": inputShape};
     // console.log(filterCriteria)
 
-    let filteredData = tableData.filter(runMultiple, filterCriteria);
+    // let filteredData = tableData.filter(runEnter, filterCriteria);
 
     
 
