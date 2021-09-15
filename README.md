@@ -4,11 +4,11 @@ Using this website available in this repository, search for UFO sightings that w
 
 [Level_1](https://github.com/LaurenGT/ufo_sightings/tree/main/level_1) in which you can search solely using a date. By inputing a date in question, you will be shown all sightings that occured on that date.
 
-![Level_1_sample_image](https://github.com/LaurenGT/ufo_sightings/tree/main/Images/level_1_sample.png)
+![Level_1_sample_image](https://github.com/LaurenGT/ufo_sightings/blob/main/Images/level_1_sample.png)
 
 [Level_2](https://github.com/LaurenGT/ufo_sightings/tree/main/level_2) in which you have five unique search criteria that you can use. By inputing any or all of the five search criteria, you will be shown all sightings that match what you requested.
 
-![Level_2_sample_image](https://github.com/LaurenGT/ufo_sightings/tree/main/Images/level_2_sample.png)
+![Level_2_sample_image](https://github.com/LaurenGT/ufo_sightings/blob/main/Images/level_2_sample.png)
 
 ## How to Use
 
